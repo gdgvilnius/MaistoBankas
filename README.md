@@ -15,3 +15,6 @@ Pridėti:
 - Nuskenuotų prekių sąrašą su antrašte
 
 ### Pridėti nustatymų fragmentą
+
+
+### Pridėti Barcode skenerį
