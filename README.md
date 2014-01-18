@@ -13,3 +13,5 @@ Pridėti:
 - Nustatymų mygtuką
 - Skenuoti mygtuką
 - Nuskenuotų prekių sąrašą su antrašte
+
+### Pridėti nustatymų fragmentą
