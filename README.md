@@ -51,3 +51,17 @@ https://github.com/gdgvilnius/MaistoBankas/commit/686d64d19c0bd3889f45cf3eeec488
 Barkodų skenavimui integravome [ZXing](https://github.com/zxing/zxing)
 Skenavimą pasinaudojant Intent'ais.
 Žiūrėti instrukcijas, kaip integruoti [čia](https://github.com/zxing/zxing/wiki/Scanning-Via-Intent)
+
+## Pridėti Lifecycle loginimą (2014-02-08)
+ Nusprendėm geriau suprasti Activity ir Fragment gyvavimo ciklą (lifecycle).
+
+ Pažiūrėjome lifecycle diagramą [čia](http://developer.android.com/training/basics/activity-lifecycle/starting.html)
+ Ir į `BaseActivity` įsidėsime `Log.d()` komandas šiuose metoduose:
+ * OnCreate
+ * OnStart
+ * OnResume
+ * OnPause
+ * OnStop
+ * OnDestroy
+
+ [Pakeitimai]()
