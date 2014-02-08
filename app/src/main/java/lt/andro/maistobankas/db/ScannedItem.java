@@ -3,6 +3,8 @@ package lt.andro.maistobankas.db;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import java.util.Date;
+
 /**
  * @author Vilius Kraujutis viliusk@gmail.com
  * @since 2014-02-08 14:50
@@ -10,13 +12,13 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "scanned_item")
 public class ScannedItem {
 
-    @DatabaseField(id = true)
+    @DatabaseField(generatedId = true)
     private long id;
 
     @DatabaseField(canBeNull = false)
     private String barcode;
     @DatabaseField(canBeNull = false)
-    private long timestamp;
+    private Date time;
     private String place;
     private String volunteer;
 
@@ -36,12 +38,12 @@ public class ScannedItem {
         this.barcode = barcode;
     }
 
-    public long getTimestamp() {
-        return timestamp;
+    public Date getTime() {
+        return time;
     }
 
-    public void setTimestamp(long timestamp) {
-        this.timestamp = timestamp;
+    public void setTime(Date time) {
+        this.time = time;
     }
 
     public String getPlace() {
@@ -65,7 +67,7 @@ public class ScannedItem {
         return "ScannedItem{" +
                 "id=" + id +
                 ", barcode='" + barcode + '\'' +
-                ", timestamp=" + timestamp +
+                ", time=" + time +
                 ", place='" + place + '\'' +
                 ", volunteer='" + volunteer + '\'' +
                 '}';

@@ -1,14 +1,16 @@
 package lt.andro.maistobankas;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+
+import lt.andro.maistobankas.db.DatabaseHelper;
+import lt.andro.maistobankas.db.OrmLiteBaseActivity;
 
 /**
  * @author Vilius Kraujutis viliusk@gmail.com
  * @since 2014-02-08 12:23
  */
-public class BaseActivity extends ActionBarActivity {
+public class BaseActivity extends OrmLiteBaseActivity<DatabaseHelper> {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

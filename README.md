@@ -102,5 +102,18 @@ Nuskenuota prekė `ScannedItem`:
 * place - Vieta
 * volunteer - Savanoris
 
-[Pakeitimai]()
+[Pakeitimai](https://github.com/gdgvilnius/MaistoBankas/commit/a3d19b796b8731e38383bde4b664b38107565d5e)
 
+### Išsaugoti naujai nuskenuojamas prekes į DB
+
+Reikės sukurti naują `ScannedItem` objektą ir išsaugoti duomenų bazėje.
+
+Apie tai, kaip susikurti ORM Lite duomenų bazės `Helper` klasę
+galima paskaityti/pažiūrėti štai čia:
+* [ORM use with Android](http://ormlite.com/javadoc/ormlite-core/doc-files/ormlite_4.html#Use-With-Android)
+* [ORM Android pavyzdžiai](http://ormlite.com/android/examples/)
+* [ORM Android pavyzdys (GitHub'e)](https://github.com/j256/ormlite-examples/blob/master/android/HelloAndroid/src/com/example/helloandroid/DatabaseHelper.java)
+
+Pasinaudojant `Helper` klase išsaugoti įrašą duomenų bazėje.
+
+[Pasikeitimai]()
