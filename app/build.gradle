@@ -20,4 +20,6 @@ android {
 
 dependencies {
     compile 'com.android.support:appcompat-v7:+'
+    compile 'com.j256.ormlite:ormlite-android:4.+'
+    compile 'com.android.support:support-v4:13.0.+'
 }

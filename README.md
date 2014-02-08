@@ -64,7 +64,7 @@ Skenavimą pasinaudojant Intent'ais.
  * OnStop
  * OnDestroy
 
- [Pakeitimai](8a58e205d20fd3556cad6e6f3032397069718879)
+ [Pakeitimai](https://github.com/gdgvilnius/MaistoBankas/commit/8a58e205d20fd3556cad6e6f3032397069718879)
 
  ## Fragmentų gyvavimo ciklo loginimas
  Analogiškai kaip ir su Activity gyvavimo ciklo loginimu,
@@ -77,5 +77,30 @@ kurioje sudėsime loginimo metodus:
 * onAttach
 ...
 
-[Pasikeitimai]()
+[Pasikeitimai](https://github.com/gdgvilnius/MaistoBankas/commit/c6e9e5c208491567eb4879c13d7af52035a81498)
+
+## Integruoti duomenų bazę Barkodų saugojimui
+Tam pasinaudosime [ORM lite](http://ormlite.com/sqlite_java_android_orm.shtml).
+
+### Susikurti duomenų modelį
+
+Saugotina informacija
+
+Prekė `Item`:
+
+* barcode - Barkodas
+* name - Prekės pavadinimas
+* price - Kaina
+* weight - Svoris
+* image_url - Nuotrauka
+
+Nuskenuota prekė `ScannedItem`:
+
+* id - nuskenavimo id
+* barcode - prekės barkodas
+* time - Laikas
+* place - Vieta
+* volunteer - Savanoris
+
+[Pakeitimai]()
 
