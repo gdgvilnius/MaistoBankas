@@ -43,8 +43,8 @@ Paprasta forma, kurioje keletas įvedimo laukelių:
 * Savanorio vardas
 * ir mygtukas Išsaugoti
 
-Pasikeitimai:
-https://github.com/gdgvilnius/MaistoBankas/commit/686d64d19c0bd3889f45cf3eeec488290153dbff
+[Pasikeitimai]
+(https://github.com/gdgvilnius/MaistoBankas/commit/686d64d19c0bd3889f45cf3eeec488290153dbff)
 
 ## Pridėti Barcode skenerį
 
@@ -64,4 +64,18 @@ Skenavimą pasinaudojant Intent'ais.
  * OnStop
  * OnDestroy
 
- [Pakeitimai]()
+ [Pakeitimai](8a58e205d20fd3556cad6e6f3032397069718879)
+
+ ## Fragmentų gyvavimo ciklo loginimas
+ Analogiškai kaip ir su Activity gyvavimo ciklo loginimu,
+ pasidarome ir Fragment'ų gyvavimo ciklo loginimą.
+ Apie [Android Fragment lifecycle galima pasiskaityti android.com svetainėje]
+  (http://developer.android.com/guide/components/fragments.html)
+
+Taigi reikės susikurti `BaseFragment` pagrindinę klasę,
+kurioje sudėsime loginimo metodus:
+* onAttach
+...
+
+[Pasikeitimai]()
+

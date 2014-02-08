@@ -11,7 +11,7 @@ import android.widget.Toast;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class MainFragment extends Fragment {
+public class MainFragment extends BaseFragment {
 
     public MainFragment() {
     }
