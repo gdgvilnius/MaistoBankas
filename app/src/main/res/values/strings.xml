@@ -7,5 +7,6 @@
     <string name="list_header_items">Prekės</string>
     <string name="button_settings">Nustatymai</string>
     <string name="button_send">Skenuoti</string>
+    <string name="barcode_scan_message">Prašome nuskenuoti prekės barkodą</string>
 
 </resources>

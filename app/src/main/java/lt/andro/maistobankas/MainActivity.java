@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.Date;
 
 import lt.andro.maistobankas.db.ScannedItem;
+import lt.andro.maistobankas.util.ScanUtil;
 
 public class MainActivity extends BaseActivity {
 
@@ -49,7 +50,7 @@ public class MainActivity extends BaseActivity {
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
-        if (scanResult != null) {
+        if (scanResult != null && resultCode == RESULT_OK) {
             final String barcode = scanResult.getContents();
             Toast.makeText(this, "ScanResult=" + barcode, Toast.LENGTH_LONG).show();
             final ScannedItem scannedItem = new ScannedItem();
@@ -63,36 +64,7 @@ public class MainActivity extends BaseActivity {
             } catch (SQLException e) {
                 Log.e("MB", "Failed saving scanned Item.", e);
             }
-//            // you get the SQLiteOpenHelper from your Android Activity
-//            ConnectionSource connectionSource =
-//                    new AndroidConnectionSource(get);
-//
-//// instantiate the DAO to handle Account with String id
-//            Dao<Account,String> accountDao =
-//                    BaseDaoImpl.createDao(connectionSource, Account.class);
-//
-//// if you need to create the 'accounts' table make this call
-//            TableUtils.createTable(connectionSource, Account.class);
-//
-//// create an instance of Account
-//            String name = "Jim Smith";
-//            Account account = new Account(name, "_secret");
-//
-//// persist the account object to the database
-//// it should return 1 for the 1 row inserted
-//            if (accountDao.create(account) != 1) {
-//                throw new Exception("Failure adding account");
-//            }
-//
-//// retrieve the account
-//            Account account2 = accountDao.queryForId(name);
-//// show its password
-//            System.out.println("Account: " + account2.getPassword());
-//
-//// close the connection source
-//            connectionSource.close();
-//            // TODO save scan result into database
+            ScanUtil.initiateScan(this);
         }
-        // else continue with any other code you need in the method
     }
 }

@@ -116,4 +116,13 @@ galima paskaityti/pažiūrėti štai čia:
 
 Pasinaudojant `Helper` klase išsaugoti įrašą duomenų bazėje.
 
-[Pasikeitimai]()
+[Pasikeitimai](https://github.com/gdgvilnius/MaistoBankas/commit/e8f589d7b588ebb9ab201e62cf5c1d74cddbd89a)
+
+### Rodyti įrašus išsaugotus duomenų bazėje
+Nuskenuotų prekių sąrašą vis atnaujinti įrašais duomenų bazėje
+
+* `MainFragment`e `onResume` metode iškviesti `dbHelper.getScannedItemDao().queryForAll();`
+* Sąrašo atvaizdavimui sukurti naują adapterį
+* Sąrašo eilutės vaizdavimui sukurti layout'ą (pradžiai tik su `TextView` barkodo atvaizdavimui)
+
+[Pasikeitimai](https://github.com/gdgvilnius/MaistoBankas/commit/)
