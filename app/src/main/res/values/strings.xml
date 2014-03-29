@@ -4,7 +4,6 @@
     <string name="app_name">Maisto Bankas</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="list_header_items">Prekės</string>
     <string name="button_settings">Nustatymai</string>
     <string name="button_send">Skenuoti</string>
     <string name="barcode_scan_message">Prašome nuskenuoti prekės barkodą</string>

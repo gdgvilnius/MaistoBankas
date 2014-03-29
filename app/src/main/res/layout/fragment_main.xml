@@ -1,25 +1,22 @@
-<LinearLayout
-    android:orientation="vertical"
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_send"
-        android:id="@+id/buttonScan" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/list_header_items"
-        android:paddingTop="12dp" />
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/main_items_list"
         tools:listitem="@layout/row_scanned_item" />
-</LinearLayout>
+
+    <ImageButton
+        android:id="@+id/buttonScan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_send"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/scan_icon"
+        android:layout_marginBottom="@dimen/padding_larger" />
+</RelativeLayout>
