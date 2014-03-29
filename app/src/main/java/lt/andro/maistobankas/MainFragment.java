@@ -19,6 +19,8 @@ import lt.andro.maistobankas.db.DatabaseHelper;
 import lt.andro.maistobankas.db.ScannedItem;
 import lt.andro.maistobankas.util.ScanUtil;
 
+import static android.view.animation.AnimationUtils.loadAnimation;
+
 /**
  * A placeholder fragment containing a simple view.
  */
@@ -53,6 +55,9 @@ public class MainFragment extends BaseFragment {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        final View buttonScan = getView().findViewById(R.id.buttonScan);
+        buttonScan.startAnimation(loadAnimation(getActivity(), R.anim.scan_button_show));
     }
 
     private void showScannedItems(List<ScannedItem> scannedItems) {
@@ -83,6 +88,7 @@ public class MainFragment extends BaseFragment {
         if (id == R.id.action_settings) {
             getActivity().getSupportFragmentManager().beginTransaction()
                     .replace(R.id.container, new ShopInformationFragment())
+                    .addToBackStack("Settings")
                     .commit();
             return true;
         }
