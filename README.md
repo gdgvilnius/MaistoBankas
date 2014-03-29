@@ -132,5 +132,13 @@ Nuskenuotų prekių sąrašą vis atnaujinti įrašais duomenų bazėje
 * Parsisiųsti prekės informaciją; Susikurti prekės informacijos duomenų modelį. Paskaitykit apie [Retrofit'ą](http://square.github.io/retrofit/). [Pasikeitimai](https://github.com/gdgvilnius/MaistoBankas/commit/9bda4b66796b0bc1d92b2551444c2445f0e18123)
 * Išsaugoti prekės informaciją į DB.
 * Atvaizduoti prekės informaciją sąraše. [Pasikeitimai](https://github.com/gdgvilnius/MaistoBankas/commit/6d6b171d3642c0aeb5e6c9ecc5a5b81b1bfa146b)
-* Parodyti prekės paveiksliuką. Pasiskaitykite apie [Picasso](http://square.github.io/picasso/).
-* Rodyti papildomą prekės informaciją.
+* Parodyti prekės paveiksliuką. Pasiskaitykite apie [Picasso](http://square.github.io/picasso/). [Pasikeitimai](https://github.com/gdgvilnius/MaistoBankas/commit/d5656cab46dd27ef911a1f7239155aa10d3aa727)
+* Rodyti papildomą prekės informaciją. [Pasikeitimai](https://github.com/gdgvilnius/MaistoBankas/commit/6c28fd68decfa446201d0be54e3c77df4f065482)
+* Perkelti `Nustatymai` mygtuką į meniu. [Pasikeitimai](https://github.com/gdgvilnius/MaistoBankas/commit/0f545f4801a240e65b46f6f065fde50d617087fa)
+* Perkelti `Skenuoti` mygtuką į centrą apačioje. [Pasikeitimai](https://github.com/gdgvilnius/MaistoBankas/commit/0252eaf832b892b6a97bc48a9e30c6a7b852277c)
+* Naujausi nuskenuoti įrašai viršuje. [Pasikeitimai](https://github.com/gdgvilnius/MaistoBankas/commit/ef5c2139eb394a6f8056720b57298563c460ce88)
+* Truputis animacijos. [Pasikeitimai](https://github.com/gdgvilnius/MaistoBankas/commit/2cd23dfb75cf4f929e43c20c08b56be77fac4d91)
+
+Dabar atrodo štai taip:
+![2014-03-29 14 37 12](https://cloud.githubusercontent.com/assets/1859636/2558559/b9318ae4-b74f-11e3-8705-30dfbd4ab074.png)
+
