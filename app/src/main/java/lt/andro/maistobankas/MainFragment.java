@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
@@ -28,15 +31,6 @@ public class MainFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-
-        rootView.findViewById(R.id.buttonSettings).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new ShopInformationFragment())
-                        .commit();
-            }
-        });
 
         rootView.findViewById(R.id.buttonScan).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,5 +66,26 @@ public class MainFragment extends BaseFragment {
         final FragmentActivity activity = getActivity();
         final DatabaseHelper helper = ((MainActivity) activity).getHelper();
         itemsList.setAdapter(new ScannedItemsAdapter(activity, scannedItems, helper));
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.main, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            getActivity().getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.container, new ShopInformationFragment())
+                    .commit();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

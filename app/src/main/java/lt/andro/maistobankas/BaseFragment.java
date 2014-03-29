@@ -13,6 +13,7 @@ import android.view.ViewGroup;
  * @since 2014-02-08 13:04
  */
 public class BaseFragment extends Fragment {
+
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -22,6 +23,7 @@ public class BaseFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
         Log.d("MBBaseFragment", "onCreate");
     }
 
