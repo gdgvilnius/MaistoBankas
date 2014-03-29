@@ -41,7 +41,8 @@ public class ScannedItemsAdapter extends BaseAdapter {
 
     @Override
     public ScannedItem getItem(int position) {
-        return scannedItems.get(position);
+        final int count = getCount() - 1;// reverse order of the list items
+        return scannedItems.get(count - position);
     }
 
     @Override
