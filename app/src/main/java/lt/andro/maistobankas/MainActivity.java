@@ -10,8 +10,12 @@ import android.widget.Toast;
 import java.sql.SQLException;
 import java.util.Date;
 
+import lt.andro.maistobankas.api.entity.ItemInfoResponse;
 import lt.andro.maistobankas.db.ScannedItem;
 import lt.andro.maistobankas.util.ScanUtil;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 public class MainActivity extends BaseActivity {
 
@@ -58,6 +62,18 @@ public class MainActivity extends BaseActivity {
             scannedItem.setPlace("Vilnius");
             scannedItem.setTime(new Date());
             scannedItem.setVolunteer("Vilius");
+
+            MainApplication.mainService.getItemInfo(barcode, new Callback<ItemInfoResponse>() {
+                @Override
+                public void success(ItemInfoResponse itemInfoResponse, Response response) {
+                    Log.d("MainActivity", itemInfoResponse.toString());
+                }
+
+                @Override
+                public void failure(RetrofitError error) {
+                    Log.e("MainActivity", error.getMessage());
+                }
+            });
 
             try {
                 getHelper().getScannedItemDao().create(scannedItem);

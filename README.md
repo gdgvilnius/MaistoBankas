@@ -11,7 +11,7 @@ Sąrašiukas, kaip programėlė buvo tobulinama
 Tie kas atėjo pirmą kartą, reikėjo įsidiegti:
 
 * Naujausią [Android Studio](http://developer.android.com/sdk/installing/studio.html)
-* [Gradle versiją 1.9](http://services.gradle.org/distributions/gradle-1.9-all.zip)
+* [Gradle versiją 1.11](http://services.gradle.org/distributions/gradle-1.11-all.zip)
 * [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
 
 ### Susigeneruoti Android programėlę
@@ -126,3 +126,9 @@ Nuskenuotų prekių sąrašą vis atnaujinti įrašais duomenų bazėje
 * Sąrašo eilutės vaizdavimui sukurti layout'ą (pradžiai tik su `TextView` barkodo atvaizdavimui)
 
 [Pasikeitimai](https://github.com/gdgvilnius/MaistoBankas/commit/)
+
+### Rodyti informaciją apie nuskenuotą prekę
+
+* Parsisiųsti prekės informaciją
+* Susikurti prekės informacijos duomenų modelį ir išsaugoti informaciją į DB
+* Atvaizduoti prekės informaciją sąraše
