@@ -132,4 +132,4 @@ Nuskenuotų prekių sąrašą vis atnaujinti įrašais duomenų bazėje
 * Parsisiųsti prekės informaciją; Susikurti prekės informacijos duomenų modelį. Paskaitykit apie [Retrofit'ą](http://square.github.io/retrofit/). [Pasikeitimai](https://github.com/gdgvilnius/MaistoBankas/commit/9bda4b66796b0bc1d92b2551444c2445f0e18123)
 * Išsaugoti prekės informaciją į DB.
 * Atvaizduoti prekės informaciją sąraše. [Pasikeitimai](https://github.com/gdgvilnius/MaistoBankas/commit/6d6b171d3642c0aeb5e6c9ecc5a5b81b1bfa146b)
-* Parodyti prekės paveiksliuką.
+* Parodyti prekės paveiksliuką. Pasiskaitykite apie [Picasso](http://square.github.io/picasso/).

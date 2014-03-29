@@ -5,7 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -53,11 +56,13 @@ public class ScannedItemsAdapter extends BaseAdapter {
 
         final TextView barcodeView = (TextView) convertView.findViewById(R.id.row_scanned_item_barcode);
         final TextView titleView = (TextView) convertView.findViewById(R.id.row_scanned_item_title);
+        final ImageView photoView = (ImageView) convertView.findViewById(R.id.row_scanned_item_photo);
         final ScannedItem scannedItem = getItem(position);
         try {
             final Item item = dbHelper.getItemDao().queryForId(scannedItem.getBarcode());
             if (item != null) {
                 titleView.setText(item.getTitle());
+                Picasso.with(context).load(item.getPhotoUrl()).into(photoView);
             }
         } catch (SQLException e) {
             e.printStackTrace();
