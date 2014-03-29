@@ -1,5 +1,6 @@
 package lt.andro.maistobankas.db;
 
+import com.google.common.base.Objects;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -19,7 +20,9 @@ public class ScannedItem {
     private String barcode;
     @DatabaseField(canBeNull = false)
     private Date time;
+    @DatabaseField
     private String place;
+    @DatabaseField
     private String volunteer;
 
     public long getId() {
@@ -64,12 +67,12 @@ public class ScannedItem {
 
     @Override
     public String toString() {
-        return "ScannedItem{" +
-                "id=" + id +
-                ", barcode='" + barcode + '\'' +
-                ", time=" + time +
-                ", place='" + place + '\'' +
-                ", volunteer='" + volunteer + '\'' +
-                '}';
+        return Objects.toStringHelper(this)
+                .add("id", id)
+                .add("barcode", barcode)
+                .add("time", time)
+                .add("place", place)
+                .add("volunteer", volunteer)
+                .toString();
     }
 }

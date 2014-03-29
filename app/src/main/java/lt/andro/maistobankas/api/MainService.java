@@ -1,6 +1,6 @@
 package lt.andro.maistobankas.api;
 
-import lt.andro.maistobankas.api.entity.ItemInfoResponse;
+import lt.andro.maistobankas.api.entity.Item;
 import retrofit.Callback;
 import retrofit.http.GET;
 import retrofit.http.Path;
@@ -11,5 +11,5 @@ import retrofit.http.Path;
 public interface MainService {
 
     @GET("/cards/by-gtin/{gtin}?format=json")
-    void getItemInfo(@Path("gtin") String globalTradeItemNumber, Callback<ItemInfoResponse> callback);
+    void getItemInfo(@Path("gtin") String globalTradeItemNumber, Callback<Item> callback);
 }

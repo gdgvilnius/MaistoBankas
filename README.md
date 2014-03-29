@@ -129,6 +129,7 @@ Nuskenuotų prekių sąrašą vis atnaujinti įrašais duomenų bazėje
 
 ### Rodyti informaciją apie nuskenuotą prekę
 
-* Parsisiųsti prekės informaciją
-* Susikurti prekės informacijos duomenų modelį ir išsaugoti informaciją į DB
-* Atvaizduoti prekės informaciją sąraše
+* Parsisiųsti prekės informaciją; Susikurti prekės informacijos duomenų modelį. Paskaitykit apie [Retrofit'ą](http://square.github.io/retrofit/). [Pasikeitimai]
+* Išsaugoti prekės informaciją į DB.
+* Atvaizduoti prekės informaciją sąraše.
+* Parodyti prekės paveiksliuką.

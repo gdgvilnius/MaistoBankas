@@ -7,9 +7,12 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import lt.andro.maistobankas.R;
+import lt.andro.maistobankas.api.entity.Item;
+import lt.andro.maistobankas.db.DatabaseHelper;
 import lt.andro.maistobankas.db.ScannedItem;
 
 /**
@@ -19,10 +22,12 @@ import lt.andro.maistobankas.db.ScannedItem;
 public class ScannedItemsAdapter extends BaseAdapter {
     private final Context context;
     private final List<ScannedItem> scannedItems;
+    private final DatabaseHelper dbHelper;
 
-    public ScannedItemsAdapter(Context context, List<ScannedItem> scannedItems) {
+    public ScannedItemsAdapter(Context context, List<ScannedItem> scannedItems, DatabaseHelper dbHelper) {
         this.context = context;
         this.scannedItems = scannedItems;
+        this.dbHelper = dbHelper;
     }
 
     @Override
@@ -47,8 +52,18 @@ public class ScannedItemsAdapter extends BaseAdapter {
         }
 
         final TextView barcodeView = (TextView) convertView.findViewById(R.id.row_scanned_item_barcode);
-        final ScannedItem item = getItem(position);
-        barcodeView.setText(item.getBarcode());
+        final TextView titleView = (TextView) convertView.findViewById(R.id.row_scanned_item_title);
+        final ScannedItem scannedItem = getItem(position);
+        try {
+            final Item item = dbHelper.getItemDao().queryForId(scannedItem.getBarcode());
+            if (item != null) {
+                titleView.setText(item.getTitle());
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        barcodeView.setText(scannedItem.getBarcode());
+
         return convertView;
     }
 }

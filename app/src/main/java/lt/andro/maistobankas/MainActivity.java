@@ -10,7 +10,7 @@ import android.widget.Toast;
 import java.sql.SQLException;
 import java.util.Date;
 
-import lt.andro.maistobankas.api.entity.ItemInfoResponse;
+import lt.andro.maistobankas.api.entity.Item;
 import lt.andro.maistobankas.db.ScannedItem;
 import lt.andro.maistobankas.util.ScanUtil;
 import retrofit.Callback;
@@ -63,17 +63,32 @@ public class MainActivity extends BaseActivity {
             scannedItem.setTime(new Date());
             scannedItem.setVolunteer("Vilius");
 
-            MainApplication.mainService.getItemInfo(barcode, new Callback<ItemInfoResponse>() {
-                @Override
-                public void success(ItemInfoResponse itemInfoResponse, Response response) {
-                    Log.d("MainActivity", itemInfoResponse.toString());
-                }
+            Item item = null;
 
-                @Override
-                public void failure(RetrofitError error) {
-                    Log.e("MainActivity", error.getMessage());
-                }
-            });
+            try {
+                item = getHelper().getItemDao().queryForId(barcode);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            if (item == null) {
+                MainApplication.mainService.getItemInfo(barcode, new Callback<Item>() {
+                    @Override
+                    public void success(Item item, Response response) {
+                        Log.d("MainActivity", item.toString());
+                        try {
+                            getHelper().getItemDao().create(item);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void failure(RetrofitError error) {
+                        Log.e("MainActivity", error.getMessage());
+                    }
+                });
+            }
 
             try {
                 getHelper().getScannedItemDao().create(scannedItem);

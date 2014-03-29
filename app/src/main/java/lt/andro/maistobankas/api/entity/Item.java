@@ -1,24 +1,38 @@
 package lt.andro.maistobankas.api.entity;
 
-import java.util.Objects;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
 /**
  * @since 2014-03-29 11:50
  */
-public class ItemInfoResponse {
+@DatabaseTable(tableName = "items")
+public class Item {
 
-    String title;
-    String amount;
-    boolean isDiscount;
-    double discount;
-    double price;
     /**
      * Global Trade Item Number
      */
+    @DatabaseField(id = true)
     String gtin;
+    @DatabaseField
+    String title;
+    @DatabaseField
+    String photoUrl;
+    @DatabaseField
+    String amount;
+    @DatabaseField
+    boolean isDiscount;
+    @DatabaseField
+    double discount;
+    @DatabaseField
+    double price;
 
     public String getTitle() {
         return title;
+    }
+
+    public String getPhotoUrl() {
+        return photoUrl;
     }
 
     public String getAmount() {
@@ -45,6 +59,7 @@ public class ItemInfoResponse {
     public String toString() {
         return com.google.common.base.Objects.toStringHelper(this)
                 .add("title", title)
+                .add("photoUrl", photoUrl)
                 .add("amount", amount)
                 .add("isDiscount", isDiscount)
                 .add("discount", discount)

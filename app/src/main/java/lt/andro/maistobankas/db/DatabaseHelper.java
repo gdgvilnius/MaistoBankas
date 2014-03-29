@@ -11,6 +11,8 @@ import com.j256.ormlite.table.TableUtils;
 
 import java.sql.SQLException;
 
+import lt.andro.maistobankas.api.entity.Item;
+
 /**
  * Database helper class used to manage the creation and upgrading of your database. This class also usually provides
  * the DAOs used by the other classes.
@@ -23,7 +25,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // the DAO object we use to access the SimpleData table
-    private Dao<Item, Integer> itemDao = null;
+    private Dao<Item, String> itemDao = null;
     private Dao<ScannedItem, Integer> scannedItemDao = null;
 
     public DatabaseHelper(Context context) {
@@ -66,10 +68,10 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     }
 
     /**
-     * Returns the Database Access Object (DAO) for our SimpleData class. It will create it or just give the cached
+     * Returns the Database Access Object (DAO). It will create it or just give the cached
      * value.
      */
-    public Dao<Item, Integer> getItemDao() throws SQLException {
+    public Dao<Item, String> getItemDao() throws SQLException {
         if (itemDao == null) {
             itemDao = getDao(Item.class);
         }
@@ -77,7 +79,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     }
 
     /**
-     * Returns the Database Access Object (DAO) for our SimpleData class. It will create it or just give the cached
+     * Returns the Database Access Object (DAO). It will create it or just give the cached
      * value.
      */
     public Dao<ScannedItem, Integer> getScannedItemDao() throws SQLException {

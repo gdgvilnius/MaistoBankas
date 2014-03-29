@@ -42,7 +42,7 @@ public class MainFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 final FragmentActivity activity = getActivity();
-                ScanUtil.initiateScan (activity);
+                ScanUtil.initiateScan(activity);
             }
         });
 
@@ -68,6 +68,9 @@ public class MainFragment extends BaseFragment {
         }
 
         final ListView itemsList = (ListView) getView().findViewById(R.id.main_items_list);
-        itemsList.setAdapter(new ScannedItemsAdapter(getActivity(), scannedItems));
+
+        final FragmentActivity activity = getActivity();
+        final DatabaseHelper helper = ((MainActivity) activity).getHelper();
+        itemsList.setAdapter(new ScannedItemsAdapter(activity, scannedItems, helper));
     }
 }
