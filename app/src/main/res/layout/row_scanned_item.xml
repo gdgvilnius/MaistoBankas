@@ -2,12 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+    android:gravity="center_vertical">
 
     <ImageView
         android:id="@+id/row_scanned_item_photo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/image_size"
+        android:layout_height="@dimen/image_size"
+        android:scaleType="centerInside"
+        android:padding="@dimen/padding_smaller"
         tools:src="@drawable/ic_launcher" />
 
     <TextView
@@ -15,6 +18,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/row_scanned_item_photo"
+        android:textStyle="bold"
+        android:padding="@dimen/padding_smaller"
+        android:textSize="@dimen/text_large"
         tools:text="Milka" />
 
     <TextView
@@ -22,7 +28,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/row_scanned_item_photo"
+        android:padding="@dimen/padding_smaller"
         android:layout_below="@+id/row_scanned_item_title"
         tools:text="123412341234" />
+
+    <TextView
+        android:id="@+id/row_scanned_item_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/row_scanned_item_photo"
+        android:padding="@dimen/padding_smaller"
+        android:layout_below="@+id/row_scanned_item_barcode"
+        tools:text="100 g; 2.65 Lt; -0.25 Lt" />
 
 </RelativeLayout>

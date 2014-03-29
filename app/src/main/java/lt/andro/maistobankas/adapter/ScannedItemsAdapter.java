@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.common.base.Joiner;
 import com.squareup.picasso.Picasso;
 
 import java.sql.SQLException;
@@ -54,8 +55,9 @@ public class ScannedItemsAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.row_scanned_item, parent, false);
         }
 
-        final TextView barcodeView = (TextView) convertView.findViewById(R.id.row_scanned_item_barcode);
         final TextView titleView = (TextView) convertView.findViewById(R.id.row_scanned_item_title);
+        final TextView barcodeView = (TextView) convertView.findViewById(R.id.row_scanned_item_barcode);
+        final TextView infoView = (TextView) convertView.findViewById(R.id.row_scanned_item_info);
         final ImageView photoView = (ImageView) convertView.findViewById(R.id.row_scanned_item_photo);
         final ScannedItem scannedItem = getItem(position);
         try {
@@ -63,6 +65,17 @@ public class ScannedItemsAdapter extends BaseAdapter {
             if (item != null) {
                 titleView.setText(item.getTitle());
                 Picasso.with(context).load(item.getPhotoUrl()).into(photoView);
+
+                final double price = item.getPrice();
+                final double discount = item.getDiscount();
+                final boolean isDiscount = item.isDiscount();
+                String[] infoArray = new String[]{
+                        item.getAmount(),
+                        price > 0 ? price + " Lt" : null,
+                        isDiscount ? String.format("-%.2f Lt", discount) : null
+                };
+                final String info = Joiner.on("; ").skipNulls().join(infoArray);
+                infoView.setText(info);
             }
         } catch (SQLException e) {
             e.printStackTrace();

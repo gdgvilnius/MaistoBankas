@@ -133,3 +133,4 @@ Nuskenuotų prekių sąrašą vis atnaujinti įrašais duomenų bazėje
 * Išsaugoti prekės informaciją į DB.
 * Atvaizduoti prekės informaciją sąraše. [Pasikeitimai](https://github.com/gdgvilnius/MaistoBankas/commit/6d6b171d3642c0aeb5e6c9ecc5a5b81b1bfa146b)
 * Parodyti prekės paveiksliuką. Pasiskaitykite apie [Picasso](http://square.github.io/picasso/).
+* Rodyti papildomą prekės informaciją.
